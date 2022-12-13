@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Fusion Tables Archive Tool
+
+    meta(name="description", content="The Fusion Tables Archive Tool is an easy way to preserve existing maps generated with Google Fusion Tables.")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,500")
+    link(rel="stylesheet", href="/main.css")
+
+    meta(name="theme-color", content="#fafafa")
+    meta(name="google-site-verification", content="gxbzmcQ-ceoGSfdzgeqfkS9IMGXr-f1Y0Y1u4i73kpY")
+
+  body.no-js
+    header.site-header
+      .site-header__content
+        a.unflashy(href=isSignedIn ? "/export" : "/", title="Go to the start page")
+          h1 Fusion Tables Archive Tool
+
+        if isSignedIn
+          a.text-button(href="/logout") Log out
+
+    svg.svg-reference(xmlns="http://www.w3.org/2000/svg")
+      symbol#icon-spinner(viewBox="0 0 50 50")
+        title Loading
+        circle(fill="none", stroke="currentColor", stroke-linecap="round", stroke-width="6", stroke-miterlimit="10", cx="25", cy="25.2", r="19.9")
+
+    block content
+
+    script(src="/main.js")
